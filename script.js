@@ -1,15 +1,7 @@
-const url = "https://pokeapi.co/api/v2/pokemon/25"
+const url = "https://pokeapi.co/api/v2/pokemon/384"
 const resultado = document.getElementById('resultado')
-
-// Forma mais detalhada
-// const resultado = fetch(url)
-//                     .then(function (resultado) {
-//                         return resultado.json()
-//                     })
-//                     .then(function (resultado) {
-//                         console.log(resultado)
-//                     })
-
+const campoBusca = document.getElementById('campoBusca')
+const btnBuscar = document.getElementById('btnBuscar')
 
 // Forma Compacta, usando arrow function
 const resposta = fetch(url)
@@ -19,3 +11,7 @@ const resposta = fetch(url)
                         <p>#${resposta.id}</p>
                         <h2>${resposta.name}</h2>
                     `)
+
+btnBuscar.addEventListener('click', () => {
+    console.log("Fui clicado buscando pokemon " + campoBusca.value)
+});
